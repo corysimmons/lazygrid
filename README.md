@@ -5,7 +5,7 @@ Simple Stylus. Clean markup. Nap time.
 
 ### Installation
 
-`@import 'path/to/lazygrid.styl'
+`@import 'path/to/lazygrid.styl'`
 
 
 ### Usage
