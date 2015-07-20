@@ -6,11 +6,11 @@ html
   overflow-x: hidden
   padding: 3rem
 
-$row
+$g-row
   font-size: 0
 
 g-row($gut = $gutter)
-  @extend $row
+  @extend $g-row
   margin-left: -($gut / 2)
   margin-right: -($gut / 2)
   if $gut is 0
@@ -18,17 +18,14 @@ g-row($gut = $gutter)
   else
     width: s('calc(100% + %s)', $gut)
 
-.row
-  g-row()
-
-$cell
+$g-cell
   display: inline-block
   font-size: 1rem
   text-align: left
   vertical-align: top
 
 g-cell($frac = 1, $gut = $gutter)
-  @extend $cell
+  @extend $g-cell
   margin-left: ($gut / 2)
   margin-right: ($gut / 2)
   if $gut is 0
@@ -36,14 +33,14 @@ g-cell($frac = 1, $gut = $gutter)
   else
     width: s('calc(100% * %s - %s)', $frac, $gut)
 
-$equal
+$g-equal
   display: table
   table-layout: fixed
   > *
     display: table-cell
 
 g-equal($gut = $gutter)
-  @extend $equal
+  @extend $g-equal
   border-spacing: $gut 0
   margin-left: -($gut)
   margin-right: -($gut)
