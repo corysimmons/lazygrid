@@ -1,0 +1,22 @@
+{
+  "name": "lazygrid",
+  "version": "0.0.1",
+  "homepage": "https://github.com/corysimmons/lazygrid",
+  "authors": [
+    "Cory Simmons"
+  ],
+  "description": "A super sleepy grid system.",
+  "main": "lazygrid.styl",
+  "keywords": [
+    "grid",
+    "stylus"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
