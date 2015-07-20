@@ -1,0 +1,20 @@
+{
+  "name": "lazygrid",
+  "version": "0.0.1",
+  "description": "A grid for nap time!",
+  "main": "lazygrid.styl",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corysimmons/lazygrid.git"
+  },
+  "keywords": [
+    "grid",
+    "stylus"
+  ],
+  "author": "Cory Simmons",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/corysimmons/lazygrid/issues"
+  },
+  "homepage": "https://github.com/corysimmons/lazygrid#readme"
+}
