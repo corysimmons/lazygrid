@@ -1,0 +1,107 @@
+// LazyGrid 0.0.1
+
+$gutter = 30px
+
+html
+  overflow-x: hidden
+  padding: 3rem
+
+$row
+  font-size: 0
+
+g-row($gut = $gutter)
+  @extend $row
+  margin-left: -($gut / 2)
+  margin-right: -($gut / 2)
+  if $gut is 0
+    width: 100%
+  else
+    width: s('calc(100% + %s)', $gut)
+
+.row
+  g-row()
+
+$cell
+  display: inline-block
+  font-size: 1rem
+  text-align: left
+  vertical-align: top
+
+g-cell($frac = 1, $gut = $gutter)
+  @extend $cell
+  margin-left: ($gut / 2)
+  margin-right: ($gut / 2)
+  if $gut is 0
+    width: s('calc(100% * %s)', $frac)
+  else
+    width: s('calc(100% * %s - %s)', $frac, $gut)
+
+$equal
+  display: table
+  table-layout: fixed
+  > *
+    display: table-cell
+
+g-equal($gut = $gutter)
+  @extend $equal
+  border-spacing: $gut 0
+  margin-left: -($gut)
+  margin-right: -($gut)
+  if $gut is 0
+    width: 100%
+  else
+    width: s('calc(100% + (%s * 2))', $gut)
+
+g-move($frac = 0, $gut = $gutter)
+  if $frac is 0
+    position: static
+    left: auto
+  else
+    position: relative
+    left: s('calc(100% * %s)', $frac)
+
+g-background($color = red, $gut = $gutter)
+  position: relative
+  > *
+    position: relative
+    z-index: 1
+  &:before
+    background: $color
+    content: ''
+    display: block
+    height: 100%
+    left: ($gut / 2)
+    position: absolute
+    right: ($gut / 2)
+
+g-align($dir = left)
+  if $dir is center
+    text-align: center
+  else if $dir is right
+    text-align: right
+  else if $dir is top
+    > *
+      vertical-align: top
+  else if $dir is middle
+    > *
+      vertical-align: middle
+  else if $dir is bottom
+    > *
+      vertical-align: bottom
+  else if $dir is both
+    text-align: center
+    > *
+      vertical-align: middle
+  else
+    text-align: left
+    > *
+      vertical-align: top
+
+g-offset($frac = 0, $gut = $gutter)
+  if $frac is 0
+    margin-left: auto
+  else
+    if $frac < 0
+      margin-right: s('calc((100% * %s - (%s / 2)) * -1)', $frac, $gut)
+    else
+      margin-left: s('calc(100% * %s + (%s / 2))', $frac, $gut)
