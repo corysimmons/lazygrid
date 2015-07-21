@@ -1,15 +1,13 @@
-// LazyGrid 0.0.2
+// LazyGrid 0.0.3
 
 $gutter = 30px
 
 html
   overflow-x: hidden
 
-$g-row
-  font-size: 0
-
 g-row($gut = $gutter)
-  @extend $g-row
+  display: block
+  font-size: 0
   margin-left: -($gut / 2)
   margin-right: -($gut / 2)
   if $gut is 0
@@ -17,32 +15,26 @@ g-row($gut = $gutter)
   else
     width: s('calc(100% + %s)', $gut)
 
-$g-cell
+g-cell($frac = 1, $gut = $gutter)
   display: inline-block
   font-size: 1rem
-  text-align: left
-  vertical-align: top
-
-g-cell($frac = 1, $gut = $gutter)
-  @extend $g-cell
   margin-left: ($gut / 2)
   margin-right: ($gut / 2)
+  text-align: left
+  vertical-align: top
   if $gut is 0
     width: s('calc(100% * %s)', $frac)
   else
     width: s('calc(100% * %s - %s)', $frac, $gut)
 
-$g-equal
+g-equal($gut = $gutter)
+  border-spacing: $gut 0
   display: table
+  margin-left: -($gut)
+  margin-right: -($gut)
   table-layout: fixed
   > *
     display: table-cell
-
-g-equal($gut = $gutter)
-  @extend $g-equal
-  border-spacing: $gut 0
-  margin-left: -($gut)
-  margin-right: -($gut)
   if $gut is 0
     width: 100%
   else
