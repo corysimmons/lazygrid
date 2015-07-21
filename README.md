@@ -58,3 +58,8 @@ You can set your global gutter in `lazygrid.styl`, or set gutters on a per area 
   - `both`
 - `g-offset($frac = 0, $gut = $gutter)` - Offset a cell from another cell. Pass a positive or negative fraction to offset in different directions.
 
+
+### Browser Support
+
+IE9+
+
