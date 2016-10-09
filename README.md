@@ -1,6 +1,6 @@
 # lazygrid
 
-https://img.shields.io/maintenance/no/2016.svg?maxAge=2592000
+[![Maintenance](https://img.shields.io/maintenance/no/2016.svg?maxAge=2592000)]()
 
 Simple Stylus. Clean markup. Nap time.
 
